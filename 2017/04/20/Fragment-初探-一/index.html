@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://hao555sky.cn/assets/images/fragment/learnFragmentTwoFragmentsShow.png">
 <meta property="og:image" content="http://hao555sky.cn/assets/images/fragment/Fragment动态添加展示图1.png">
 <meta property="og:image" content="http://hao555sky.cn/assets/images/fragment/Fragment动态添加展示图2.png">
-<meta property="og:updated_time" content="2017-04-20T07:43:44.859Z">
+<meta property="og:updated_time" content="2017-04-20T07:44:55.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fragment 初探(一)">
 <meta name="twitter:description" content="概述最近写项目的时候, 用到了fragment, 就想着系统学习一下,实现完还要整理下,毕竟技术这种东西,稍微时间长点就会忘记.
@@ -383,6 +383,7 @@
 <h3 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h3><p>Android 在 Android 3.0（API 级别 11）中引入了片段，主要是为了给大屏幕（如平板电脑）上更加动态和灵活的 UI 设计提供支持。由于平板电脑的屏幕比手机屏幕大得多，因此可用于组合和交换 UI 组件的空间更大。利用片段实现此类设计时，您无需管理对视图层次结构的复杂更改。 通过将 Activity 布局分成片段，您可以在运行时修改 Activity 的外观，并在由 Activity 管理的返回栈中保留这些更改。</p>
 <p>您应该将每个片段都设计为可重复使用的模块化 Activity 组件。也就是说，由于每个片段都会通过各自的生命周期回调来定义其自己的布局和行为，您可以将一个片段加入多个 Activity，因此，您应该采用可复用式设计，避免直接从某个片段直接操纵另一个片段。 这特别重要，因为模块化片段让您可以通过更改片段的组合方式来适应不同的屏幕尺寸。 在设计可同时支持平板电脑和手机的应用时，您可以在不同的布局配置中重复使用您的片段，以根据可用的屏幕空间优化用户体验。 例如，在手机上，如果不能在同一 Activity 内储存多个片段，可能必须利用单独片段来实现单窗格 UI。<br><img src="/assets/images/fragment/fragmentsInPhoneAndTablet.png" alt="Alt text"></p>
 <p>  例如 — 仍然以新闻应用为例 — 在平板电脑尺寸的设备上运行时，该应用可以在 Activity A 中嵌入两个片段。 不过，在手机尺寸的屏幕上，没有足以储存两个片段的空间，因此Activity A 只包括用于显示文章列表的片段，当用户选择文章时，它会启动Activity B，其中包括用于阅读文章的第二个片段。 因此，应用可通过重复使用不同组合的片段来同时支持平板电脑和手机，如图 1 所示。</p>
+<a id="more"></a>
 <h3 id="Fragment生命周期"><a href="#Fragment生命周期" class="headerlink" title="Fragment生命周期"></a>Fragment生命周期</h3><h4 id="Fragment生命周期和其与Activity比较"><a href="#Fragment生命周期和其与Activity比较" class="headerlink" title="Fragment生命周期和其与Activity比较"></a>Fragment生命周期和其与Activity比较</h4><p><img src="/assets/images/fragment/fragment_lifecycle.png" alt="Alt text">                                                                    <img src="/assets/images/fragment/activity_fragment_lifecycle.png" alt="Alt text"><br><code>左边是fragment的生命周期, 右边是于Activity的比较</code></p>
 <h4 id="Fragment的生命周期方法"><a href="#Fragment的生命周期方法" class="headerlink" title="Fragment的生命周期方法"></a>Fragment的生命周期方法</h4><blockquote>
 <ul>
